@@ -4,23 +4,23 @@
   "https": true,
   "serveConfigurations": {
     "default": {
-      "pageUrl": "https://contoso.sharepoint.com/sites/mySite/SitePages/myPage.aspx",
+      "pageUrl": "https://f12team.sharepoint.com/sites/team/test/SitePages/Home.aspx",
       "customActions": {
         "6f6ec1d3-0c9a-4e69-a63b-baf4884b5cef": {
           "location": "ClientSideExtension.ApplicationCustomizer",
           "properties": {
-            "testMessage": "Test message"
+            "topMenuTermSet": "TopNav"
           }
         }
       }
     },
     "globalNavBar": {
-      "pageUrl": "https://contoso.sharepoint.com/sites/mySite/SitePages/myPage.aspx",
+      "pageUrl": "https://f12team.sharepoint.com/sites/team/test/SitePages/Home.aspx",
       "customActions": {
         "6f6ec1d3-0c9a-4e69-a63b-baf4884b5cef": {
           "location": "ClientSideExtension.ApplicationCustomizer",
           "properties": {
-            "testMessage": "Test message"
+            "topMenuTermSet": "TopNav"
           }
         }
       }

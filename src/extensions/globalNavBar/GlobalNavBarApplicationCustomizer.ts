@@ -1,11 +1,10 @@
 import { override } from '@microsoft/decorators';
 import { Log } from '@microsoft/sp-core-library';
 import {
-  BaseApplicationCustomizer
+  BaseApplicationCustomizer, PlaceholderContent, PlaceholderName
 } from '@microsoft/sp-application-base';
-import { Dialog } from '@microsoft/sp-dialog';
-
 import * as strings from 'GlobalNavBarApplicationCustomizerStrings';
+import { SPTermStoreService, ISPTermObject } from '../../services/SPTermStoreService';
 
 const LOG_SOURCE: string = 'GlobalNavBarApplicationCustomizer';
 
@@ -15,25 +14,45 @@ const LOG_SOURCE: string = 'GlobalNavBarApplicationCustomizer';
  * You can define an interface to describe it.
  */
 export interface IGlobalNavBarApplicationCustomizerProperties {
-  // This is an example; replace with your own property
-  testMessage: string;
+  topMenuTermSet: string;
 }
 
 /** A Custom Action which can be run during execution of a Client Side Application */
 export default class GlobalNavBarApplicationCustomizer
   extends BaseApplicationCustomizer<IGlobalNavBarApplicationCustomizerProperties> {
+  
+  private _topPlaceholder: PlaceholderContent | undefined;
+  private _globalNavItems: ISPTermObject[];
 
   @override
-  public onInit(): Promise<void> {
+  public async onInit(): Promise<void> {
     Log.info(LOG_SOURCE, `Initialized ${strings.Title}`);
+    let termStoreService: SPTermStoreService = new SPTermStoreService(this.context);
+    this._globalNavItems = await termStoreService.getGlobalNavItemsAsync(this.properties.topMenuTermSet);
 
-    let message: string = this.properties.testMessage;
-    if (!message) {
-      message = '(No properties were provided.)';
+    this.context.placeholderProvider.changedEvent.add(this, this._renderPlaceholder);
+    return Promise.resolve<void>();
+  }
+
+  private _renderPlaceholder(): void {
+    console.log("GlobalNavBarApplicationCustomizer._renderPlaceHolders()");
+
+    // Handling the top placeholder
+    if(!this._topPlaceholder) {
+      this.context.placeholderProvider.tryCreateContent(PlaceholderName.Top, {onDispose: this._onDispose});
+      // The extension should not assume that the expected placeholder is available.
+      if (!this._topPlaceholder) {
+        console.error("The expected placeholder (Top) was not found.");
+        return;
+      }
+
+      if(this._globalNavItems && this._globalNavItems.length > 0){
+        
+      }
     }
+  }
 
-    Dialog.alert(`Hello from ${strings.Title}:\n\n${message}`);
-
-    return Promise.resolve();
+  private _onDispose(): void {
+    console.log('[GlobalNavBarApplicationCustomizer._onDispose] Disposed custom top placeholder.');
   }
 }
