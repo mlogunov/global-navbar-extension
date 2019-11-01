@@ -5,6 +5,10 @@ import {
 } from '@microsoft/sp-application-base';
 import * as strings from 'GlobalNavBarApplicationCustomizerStrings';
 import { SPTermStoreService, ISPTermObject } from '../../services/SPTermStoreService';
+import { IGlobalNavBarProps } from '../../components/IGlobalNavBarProps';
+import { GlobalNavBar } from '../../components/GlobalNavBar';
+import * as React from 'react';
+import * as ReactDom from 'react-dom';
 
 const LOG_SOURCE: string = 'GlobalNavBarApplicationCustomizer';
 
@@ -36,10 +40,9 @@ export default class GlobalNavBarApplicationCustomizer
 
   private _renderPlaceholder(): void {
     console.log("GlobalNavBarApplicationCustomizer._renderPlaceHolders()");
-
     // Handling the top placeholder
     if(!this._topPlaceholder) {
-      this.context.placeholderProvider.tryCreateContent(PlaceholderName.Top, {onDispose: this._onDispose});
+      this._topPlaceholder = this.context.placeholderProvider.tryCreateContent(PlaceholderName.Top, {onDispose: this._onDispose});
       // The extension should not assume that the expected placeholder is available.
       if (!this._topPlaceholder) {
         console.error("The expected placeholder (Top) was not found.");
@@ -47,7 +50,14 @@ export default class GlobalNavBarApplicationCustomizer
       }
 
       if(this._globalNavItems && this._globalNavItems.length > 0){
-        
+        console.log(this._globalNavItems);
+        const element: React.ReactElement<IGlobalNavBarProps> = React.createElement(
+          GlobalNavBar,
+          {
+            menuItems: this._globalNavItems
+          }
+        );
+        ReactDom.render(element, this._topPlaceholder.domElement)
       }
     }
   }

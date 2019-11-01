@@ -381,6 +381,22 @@
         "react": "15.6.2",
         "react-dom": "15.6.2",
         "tslib": "~1.8.0"
+      },
+      "dependencies": {
+        "office-ui-fabric-react": {
+          "version": "5.21.0",
+          "resolved": "https://registry.npmjs.org/office-ui-fabric-react/-/office-ui-fabric-react-5.21.0.tgz",
+          "integrity": "sha512-9IBLK6JUWYvdCumKywjkSP7mf/MqTRorP1qXtb2c+w2fQJH4NkdBjanO0zr37c5VPwlqc0KvPf51E9t1NU7oTg==",
+          "requires": {
+            "@microsoft/load-themed-styles": "^1.7.2",
+            "@uifabric/icons": ">=5.2.0 <6.0.0",
+            "@uifabric/merge-styles": ">=5.6.0 <6.0.0",
+            "@uifabric/styling": ">=5.7.0 <6.0.0",
+            "@uifabric/utilities": ">=5.3.3 <6.0.0",
+            "prop-types": "^15.5.10",
+            "tslib": "^1.7.1"
+          }
+        }
       }
     },
     "@microsoft/package-deps-hash": {
@@ -881,6 +897,22 @@
         "office-ui-fabric-react": "5.21.0",
         "react": "15.6.2",
         "react-dom": "15.6.2"
+      },
+      "dependencies": {
+        "office-ui-fabric-react": {
+          "version": "5.21.0",
+          "resolved": "https://registry.npmjs.org/office-ui-fabric-react/-/office-ui-fabric-react-5.21.0.tgz",
+          "integrity": "sha512-9IBLK6JUWYvdCumKywjkSP7mf/MqTRorP1qXtb2c+w2fQJH4NkdBjanO0zr37c5VPwlqc0KvPf51E9t1NU7oTg==",
+          "requires": {
+            "@microsoft/load-themed-styles": "^1.7.2",
+            "@uifabric/icons": ">=5.2.0 <6.0.0",
+            "@uifabric/merge-styles": ">=5.6.0 <6.0.0",
+            "@uifabric/styling": ">=5.7.0 <6.0.0",
+            "@uifabric/utilities": ">=5.3.3 <6.0.0",
+            "prop-types": "^15.5.10",
+            "tslib": "^1.7.1"
+          }
+        }
       }
     },
     "@microsoft/sp-extension-base": {
@@ -936,6 +968,22 @@
         "react": "15.6.2",
         "react-dom": "15.6.2",
         "requirejs": "2.1.20"
+      },
+      "dependencies": {
+        "office-ui-fabric-react": {
+          "version": "5.21.0",
+          "resolved": "https://registry.npmjs.org/office-ui-fabric-react/-/office-ui-fabric-react-5.21.0.tgz",
+          "integrity": "sha512-9IBLK6JUWYvdCumKywjkSP7mf/MqTRorP1qXtb2c+w2fQJH4NkdBjanO0zr37c5VPwlqc0KvPf51E9t1NU7oTg==",
+          "requires": {
+            "@microsoft/load-themed-styles": "^1.7.2",
+            "@uifabric/icons": ">=5.2.0 <6.0.0",
+            "@uifabric/merge-styles": ">=5.6.0 <6.0.0",
+            "@uifabric/styling": ">=5.7.0 <6.0.0",
+            "@uifabric/utilities": ">=5.3.3 <6.0.0",
+            "prop-types": "^15.5.10",
+            "tslib": "^1.7.1"
+          }
+        }
       }
     },
     "@microsoft/sp-lodash-subset": {
@@ -1050,6 +1098,22 @@
         "react-dom": "15.6.2",
         "scrollreveal": "3.3.6",
         "tslib": "~1.8.0"
+      },
+      "dependencies": {
+        "office-ui-fabric-react": {
+          "version": "5.21.0",
+          "resolved": "https://registry.npmjs.org/office-ui-fabric-react/-/office-ui-fabric-react-5.21.0.tgz",
+          "integrity": "sha512-9IBLK6JUWYvdCumKywjkSP7mf/MqTRorP1qXtb2c+w2fQJH4NkdBjanO0zr37c5VPwlqc0KvPf51E9t1NU7oTg==",
+          "requires": {
+            "@microsoft/load-themed-styles": "^1.7.2",
+            "@uifabric/icons": ">=5.2.0 <6.0.0",
+            "@uifabric/merge-styles": ">=5.6.0 <6.0.0",
+            "@uifabric/styling": ">=5.7.0 <6.0.0",
+            "@uifabric/utilities": ">=5.3.3 <6.0.0",
+            "prop-types": "^15.5.10",
+            "tslib": "^1.7.1"
+          }
+        }
       }
     },
     "@microsoft/sp-webpart-workbench": {
@@ -1078,6 +1142,23 @@
         "react": "15.6.2",
         "react-dom": "15.6.2",
         "tslib": "~1.8.0"
+      },
+      "dependencies": {
+        "office-ui-fabric-react": {
+          "version": "5.21.0",
+          "resolved": "https://registry.npmjs.org/office-ui-fabric-react/-/office-ui-fabric-react-5.21.0.tgz",
+          "integrity": "sha512-9IBLK6JUWYvdCumKywjkSP7mf/MqTRorP1qXtb2c+w2fQJH4NkdBjanO0zr37c5VPwlqc0KvPf51E9t1NU7oTg==",
+          "dev": true,
+          "requires": {
+            "@microsoft/load-themed-styles": "^1.7.2",
+            "@uifabric/icons": ">=5.2.0 <6.0.0",
+            "@uifabric/merge-styles": ">=5.6.0 <6.0.0",
+            "@uifabric/styling": ">=5.7.0 <6.0.0",
+            "@uifabric/utilities": ">=5.3.3 <6.0.0",
+            "prop-types": "^15.5.10",
+            "tslib": "^1.7.1"
+          }
+        }
       }
     },
     "@microsoft/stream-collator": {
@@ -12183,17 +12264,33 @@
       "integrity": "sha1-4qyf8+T8eI2mYReN6/CUA2sKLiY="
     },
     "office-ui-fabric-react": {
-      "version": "5.21.0",
-      "resolved": "https://registry.npmjs.org/office-ui-fabric-react/-/office-ui-fabric-react-5.21.0.tgz",
-      "integrity": "sha512-9IBLK6JUWYvdCumKywjkSP7mf/MqTRorP1qXtb2c+w2fQJH4NkdBjanO0zr37c5VPwlqc0KvPf51E9t1NU7oTg==",
+      "version": "5.132.0",
+      "resolved": "https://registry.npmjs.org/office-ui-fabric-react/-/office-ui-fabric-react-5.132.0.tgz",
+      "integrity": "sha512-IGN//fomGrDFjEy3zYnelNOevI2WZE5/8uj2ithEhgWS8XxFklwrXPDyiUTA/sAkViInqk5GCslylmV6TLfN2Q==",
       "requires": {
-        "@microsoft/load-themed-styles": "^1.7.2",
-        "@uifabric/icons": ">=5.2.0 <6.0.0",
-        "@uifabric/merge-styles": ">=5.6.0 <6.0.0",
-        "@uifabric/styling": ">=5.7.0 <6.0.0",
-        "@uifabric/utilities": ">=5.3.3 <6.0.0",
+        "@microsoft/load-themed-styles": "^1.7.13",
+        "@uifabric/icons": ">=5.8.0 <6.0.0",
+        "@uifabric/merge-styles": ">=5.17.1 <6.0.0",
+        "@uifabric/styling": ">=5.37.0 <6.0.0",
+        "@uifabric/utilities": ">=5.34.2 <6.0.0",
         "prop-types": "^15.5.10",
         "tslib": "^1.7.1"
+      },
+      "dependencies": {
+        "@microsoft/load-themed-styles": {
+          "version": "1.10.16",
+          "resolved": "https://registry.npmjs.org/@microsoft/load-themed-styles/-/load-themed-styles-1.10.16.tgz",
+          "integrity": "sha512-S/d7Zx+ACN3Hu3BIAjWGefEu9xrLHUt2WRhd8WGJ3POkCQntCuyQmJhl72jJHFFGTKQc7iu3OCt4r7yTAOuwlQ=="
+        },
+        "@uifabric/icons": {
+          "version": "5.8.0",
+          "resolved": "https://registry.npmjs.org/@uifabric/icons/-/icons-5.8.0.tgz",
+          "integrity": "sha512-EUhKxYlIPJshg4fQvCNTYSk0p7RhzEWeEAJBV4sao1SKmN0/pZBnkLbDqWjU5VUfdwZZYiIdaLRpM+pyzhniZw==",
+          "requires": {
+            "@uifabric/styling": ">=5.30.1 <6.0.0",
+            "tslib": "^1.7.1"
+          }
+        }
       }
     },
     "on-finished": {

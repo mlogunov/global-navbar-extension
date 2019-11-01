@@ -1,13 +1,10 @@
 import { ApplicationCustomizerContext } from "@microsoft/sp-application-base";
 import { sp } from "@pnp/sp";
-import { ITermStore, taxonomy, ITermSet, ITerm, ITermData } from "@pnp/sp-taxonomy";
+import { taxonomy, ITerm, ITermData } from "@pnp/sp-taxonomy";
 
 export interface ISPTermObject {
     identity: string;
-    isAvailableForTagging: boolean;
     name: string;
-    guid: string;
-    customSortOrder: string;
     terms: ISPTermObject[];
     localCustomProperties: any;
 }
@@ -15,16 +12,15 @@ export interface ISPTermObject {
 export class SPTermStoreService {
     constructor(private context: ApplicationCustomizerContext){
         sp.setup({
-            spfxContext: this.context
+            spfxContext: this.context,
+            defaultCachingTimeoutSeconds: 3600
         })
     }
 
     public async getGlobalNavItemsAsync(termSet: string): Promise<ISPTermObject[]> {
         let items: ISPTermObject[] = [];
         try{
-            const stores: ITermStore[] = await taxonomy.termStores.get();
-            const set: ITermSet = await stores[0].getTermSetsByName(termSet, 1033).getByName(termSet);
-            const terms: (ITermData & ITerm)[] = await set.terms.get();
+            const terms = await taxonomy.getDefaultSiteCollectionTermStore().getTermSetsByName(termSet, 1033).getByName(termSet).terms.usingCaching().get();
             const rootTerms: (ITermData & ITerm)[] = terms.filter((term: ITermData) => term.IsRoot);
             if(rootTerms && rootTerms.length > 0){
                 items = await Promise.all<ISPTermObject>(
@@ -45,11 +41,8 @@ export class SPTermStoreService {
     private async getNavItemAsync(term: (ITermData & ITerm)): Promise<ISPTermObject> {
         return(
             {
-                identity: term.Id,
-                isAvailableForTagging: term.IsAvailableForTagging,
+                identity: term.Id.replace("/Guid(", "").replace(")/", ""),
                 name: term.Name,
-                guid: term.Id,
-                customSortOrder: term.CustomSortOrder,
                 terms: await this.getChildNavItemsAsync(term),
                 localCustomProperties: term.LocalCustomProperties
             }
